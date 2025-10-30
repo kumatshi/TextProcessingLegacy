@@ -13,15 +13,11 @@ namespace TextProcessing.Legacy.Demo
             Console.WriteLine("Демо: TextProcessing.Legacy.Demo (Консольное приложение)");
             Console.WriteLine("=============================================");
             Console.WriteLine();
-
-            // Создаем экземпляры классов из БИБЛИОТЕКИ
             var analyzer = new TextAnalyzer();
             var formatter = new TextFormatter();
             var processor = new TextProcessor();
 
             string testText = "   Привет    мир   это    тестовый     текст   ";
-
-            // Демонстрация МОДУЛЯ 1: Анализатор текста
             Console.WriteLine("МОДУЛЬ 1: АНАЛИЗАТОР ТЕКСТА");
             Console.WriteLine("Исходный текст: '" + testText + "'");
             Console.WriteLine();
@@ -46,7 +42,6 @@ namespace TextProcessing.Legacy.Demo
             analyzer.CharacterFrequencyAnalysis("Привет Мир!");
             Console.WriteLine();
 
-            // Демонстрация МОДУЛЯ 2: Форматировщик текста
             Console.WriteLine("МОДУЛЬ 2: ФОРМАТИРОВЩИК ТЕКСТА");
             Console.WriteLine();
 

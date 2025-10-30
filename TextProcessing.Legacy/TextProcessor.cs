@@ -3,13 +3,11 @@ using System.Collections.Generic;
 
 namespace TextProcessing.Legacy
 {
-    // Нарушение SRP: Главный класс, который всё управляет
     public class TextProcessor
     {
         private TextAnalyzer analyzer = new TextAnalyzer();
         private TextFormatter formatter = new TextFormatter();
 
-        // Нарушение: Метод делает слишком много
         public void ProcessCompleteText(string text)
         {
             Console.WriteLine("=== TEXT ANALYSIS ===");
@@ -26,7 +24,6 @@ namespace TextProcessing.Legacy
             Console.WriteLine(formatted);
         }
 
-        // Нарушение: Цепочка вызовов
         public string GetProcessedFirstWord(string text)
         {
             if (text != null && text.Length > 0 && text.Split(' ').Length > 0)
@@ -36,12 +33,10 @@ namespace TextProcessing.Legacy
             return "";
         }
 
-        // Нарушение: Смешивание ответственности двух модулей
         public Dictionary<string, object> FullTextAnalysis(string text)
         {
             var result = new Dictionary<string, object>();
 
-            // Используем оба модуля в одном методе
             var analysis = analyzer.AnalyzeEverything(text);
             var formatted = formatter.FormatEverything(text, 1);
             var longest = analyzer.FindLongestWord(text);
