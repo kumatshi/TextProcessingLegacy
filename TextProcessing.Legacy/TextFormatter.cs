@@ -90,7 +90,8 @@ namespace TextProcessing.Legacy
                 {
                     if (currentLine.Length > 0)
                     {
-                        while (currentLine.Length < lineWidth)
+                        // БАГ 2: Бесконечный цикл - условие никогда не выполнится
+                        while (currentLine.Length > lineWidth)
                         {
                             currentLine.Append(' ');
                         }

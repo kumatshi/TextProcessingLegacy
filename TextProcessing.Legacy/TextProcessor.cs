@@ -28,7 +28,8 @@ namespace TextProcessing.Legacy
         {
             if (text != null && text.Length > 0 && text.Split(' ').Length > 0)
             {
-                return formatter.ChangeTextCase(text.Split(' ')[0], 1);
+                // БАГ 1: Используется индекс 1 вместо 0 для первого слова
+                return formatter.ChangeTextCase(text.Split(' ')[1], 1);
             }
             return "";
         }

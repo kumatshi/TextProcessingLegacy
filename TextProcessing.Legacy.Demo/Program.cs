@@ -77,6 +77,10 @@ namespace TextProcessing.Legacy.Demo
             Console.WriteLine("   Полный анализ завершен!");
             Console.WriteLine();
 
+            // БАГ 5: Вызов метода с null аргументом
+            string firstWord = processor.GetProcessedFirstWord(null);
+            Console.WriteLine($"   Первое слово: '{firstWord}'");
+
             Console.WriteLine("Нажмите любую клавишу для выхода...");
             Console.ReadKey();
         }

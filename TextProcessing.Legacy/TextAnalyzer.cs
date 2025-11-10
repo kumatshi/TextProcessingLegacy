@@ -46,7 +46,8 @@ namespace TextProcessing.Legacy
         // Нарушение: Дублирование функциональности
         public int CountWords(string text)
         {
-            return text.Split(new char[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            // БАГ 3: Неправильный разделитель - используется запятая вместо пробела
+            return text.Split(new char[] { ',', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
         // Нарушение: Метод делает слишком много - и считает и выводит
@@ -80,7 +81,8 @@ namespace TextProcessing.Legacy
 
             for (int i = 0; i < words.Length; i++)
             {
-                if (words[i].Length > longest.Length && words[i].Length > 0)
+                // БАГ 4: Неправильное условие - сравнивается с 1 вместо 0
+                if (words[i].Length > longest.Length && words[i].Length > 1)
                 {
                     longest = words[i];
                 }
